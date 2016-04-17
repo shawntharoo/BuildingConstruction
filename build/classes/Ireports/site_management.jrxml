@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d903a015-310b-4701-a3eb-a26bdecb38a8">
+	<property name="ireport.zoom" value="1.0000000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="90"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     con_sites.`id` AS con_sites_id,
+     con_sites.`name` AS con_sites_name,
+     con_sites.`location` AS con_sites_location,
+     con_sites.`Cust_id` AS con_sites_Cust_id,
+     con_sites.`address` AS con_sites_address,
+     con_sites.`status` AS con_sites_status,
+     con_sites.`est_comp_date` AS con_sites_est_comp_date,
+     con_sites.`type` AS con_sites_type,
+     con_sites.`mode` AS con_sites_mode,
+     con_sites.`no_levels` AS con_sites_no_levels,
+     con_sites.`act_star_date` AS con_sites_act_star_date,
+     con_sites.`scl_area` AS con_sites_scl_area,
+     con_sites.`session` AS con_sites_session,
+     con_sites.`Site_manager` AS con_sites_Site_manager,
+     con_sites.`com_lvls` AS con_sites_com_lvls,
+     assinged_eng.`id` AS assinged_eng_id,
+     assinged_eng.`name` AS assinged_eng_name,
+     assinged_eng.`lname` AS assinged_eng_lname,
+     assinged_eng.`EID` AS assinged_eng_EID,
+     assinged_eng.`contact` AS assinged_eng_contact,
+     assinged_eng.`wrking_hrs` AS assinged_eng_wrking_hrs,
+     assinged_sup.`id` AS assinged_sup_id,
+     assinged_sup.`name` AS assinged_sup_name,
+     assinged_sup.`lname` AS assinged_sup_lname,
+     assinged_sup.`EID` AS assinged_sup_EID,
+     assinged_sup.`contact` AS assinged_sup_contact,
+     customer.`Cust_id` AS customer_Cust_id,
+     customer.`Name` AS customer_Name,
+     customer.`Cust_type` AS customer_Cust_type,
+     customer.`Company_type` AS customer_Company_type,
+     customer.`Telephone` AS customer_Telephone,
+     customer.`Email` AS customer_Email,
+     customer.`Address` AS customer_Address
+FROM
+     `assinged_eng` assinged_eng INNER JOIN `con_sites` con_sites ON assinged_eng.`id` = con_sites.`id`
+     INNER JOIN `assinged_sup` assinged_sup ON con_sites.`id` = assinged_sup.`id`
+     INNER JOIN `customer` customer ON con_sites.`Cust_id` = customer.`Cust_id`]]>
+	</queryString>
+	<field name="con_sites_id" class="java.lang.Long"/>
+	<field name="con_sites_name" class="java.lang.String"/>
+	<field name="con_sites_location" class="java.lang.String"/>
+	<field name="con_sites_Cust_id" class="java.lang.Long"/>
+	<field name="con_sites_address" class="java.lang.String"/>
+	<field name="con_sites_status" class="java.lang.String"/>
+	<field name="con_sites_est_comp_date" class="java.sql.Date"/>
+	<field name="con_sites_type" class="java.lang.String"/>
+	<field name="con_sites_mode" class="java.lang.String"/>
+	<field name="con_sites_no_levels" class="java.lang.Long"/>
+	<field name="con_sites_act_star_date" class="java.sql.Date"/>
+	<field name="con_sites_scl_area" class="java.lang.String"/>
+	<field name="con_sites_session" class="java.lang.String"/>
+	<field name="con_sites_Site_manager" class="java.lang.Long"/>
+	<field name="con_sites_com_lvls" class="java.lang.Long"/>
+	<field name="assinged_eng_id" class="java.lang.Long"/>
+	<field name="assinged_eng_name" class="java.lang.String"/>
+	<field name="assinged_eng_lname" class="java.lang.String"/>
+	<field name="assinged_eng_EID" class="java.lang.Long"/>
+	<field name="assinged_eng_contact" class="java.lang.String"/>
+	<field name="assinged_eng_wrking_hrs" class="java.lang.Long"/>
+	<field name="assinged_sup_id" class="java.lang.String"/>
+	<field name="assinged_sup_name" class="java.lang.String"/>
+	<field name="assinged_sup_lname" class="java.lang.String"/>
+	<field name="assinged_sup_EID" class="java.lang.Long"/>
+	<field name="assinged_sup_contact" class="java.lang.Long"/>
+	<field name="customer_Cust_id" class="java.lang.Integer"/>
+	<field name="customer_Name" class="java.lang.String"/>
+	<field name="customer_Cust_type" class="java.lang.String"/>
+	<field name="customer_Company_type" class="java.lang.String"/>
+	<field name="customer_Telephone" class="java.lang.String"/>
+	<field name="customer_Email" class="java.lang.String"/>
+	<field name="customer_Address" class="java.lang.String"/>
+	<variable name="assinged_eng_id_1" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{assinged_eng_id}]]></variableExpression>
+	</variable>
+	<variable name="assinged_eng_id_2" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{assinged_eng_id}]]></variableExpression>
+	</variable>
+	<variable name="assinged_eng_id_3" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{assinged_eng_id}]]></variableExpression>
+	</variable>
+	<variable name="con_sites_id_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{con_sites_id}]]></variableExpression>
+	</variable>
+	<variable name="con_sites_no_levels_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{con_sites_no_levels}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="14" y="24" width="130" height="36" uuid="b2c1d9a2-5d7d-4984-8dd8-9eaa65ddba02"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="435" y="24" width="100" height="20" uuid="31ac7f70-5bf1-461e-80b8-7161e7ec7e4a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="578" splitType="Stretch">
+			<staticText>
+				<reportElement x="308" y="220" width="100" height="20" uuid="61ed4d3c-ccbb-4a6a-b62d-85f4c5316ff4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[E-Mail]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="220" width="100" height="20" uuid="fe0d573d-c47f-438e-9f5c-ec7c970a805e"/>
+				<textFieldExpression><![CDATA[$F{customer_Email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="450" width="117" height="20" uuid="15e6e430-ca07-4f5c-83a8-7f51a4df708a"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Current Session        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="180" width="100" height="20" uuid="99ddfdf6-6160-4f26-a1bc-997c21cfb7f2"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="195" width="117" height="20" uuid="c0f7718c-106f-4144-b1e8-ea5cf6ad7b9e"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Status                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="113" width="100" height="20" uuid="51e5946a-6fdc-4271-a876-260fd8b0294d"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="197" width="100" height="20" uuid="45900aef-979d-445a-9645-d705e1d72b5b"/>
+				<textFieldExpression><![CDATA[$F{con_sites_status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="308" y="145" width="100" height="20" uuid="961e8d17-f2cb-45c5-a737-59eb9221b69a"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Customer Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="266" width="117" height="20" uuid="c940bf33-bea8-4850-9e36-7c77f184ae61"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Construction Type     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="301" width="117" height="20" uuid="0ce6bd0b-663a-4d8e-bf8b-a516c16b6868"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Construction Mode    :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="450" width="100" height="20" uuid="aa28ef7c-954c-47d9-8699-1c02c6085174"/>
+				<textFieldExpression><![CDATA[$F{con_sites_session}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="308" y="87" width="100" height="20" uuid="0f941872-6f9f-4d51-a821-62c03ba99932"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Customer ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="341" width="100" height="20" uuid="944be2b8-ad9d-4ea2-a7cf-ccec01a4429f"/>
+				<textFieldExpression><![CDATA[$F{con_sites_no_levels}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="338" width="117" height="20" uuid="4b4e8b65-ef4e-40c5-9e8e-9b08a753d2c2"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[No. of Levels             :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="266" width="100" height="20" uuid="684bcf1c-fbb3-4b40-8ea3-abed00f8fe6c"/>
+				<textFieldExpression><![CDATA[$F{con_sites_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="484" width="117" height="20" uuid="675c37cc-101c-49e2-924b-db1f65516406"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Site Manager           :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="93" width="117" height="20" uuid="1245ec31-6e54-4c81-af58-cb84129d18c3"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Project ID                   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="423" y="87" width="100" height="20" uuid="75d02fe9-c970-4de1-a24e-ec99977bfa29"/>
+				<textFieldExpression><![CDATA[$F{customer_Cust_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="145" width="100" height="20" uuid="af917201-c71d-4cee-9c27-5a28d41463b6"/>
+				<textFieldExpression><![CDATA[$F{customer_Cust_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="376" width="117" height="20" uuid="6d1f71b8-4a40-4295-9de2-87b00af44c54"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Actual Start Date      :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="26" y="33" width="100" height="20" uuid="8d47f464-c927-49d9-933f-a45ce11bd9fb"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_sites_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="160" width="117" height="20" uuid="20554c48-664d-4764-8d17-ff5a72cf092e"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Address                      :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="125" width="100" height="20" uuid="21be746b-06fd-4d0a-a315-ff4d2f08b3a4"/>
+				<textFieldExpression><![CDATA[$F{con_sites_location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="409" width="117" height="20" uuid="2374578f-54c7-46c9-ba8b-1d62ef409cd6"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Scale Of the Area     :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="376" width="100" height="20" uuid="0d0522e9-3bf9-48b3-9ebf-e5df7da9010d"/>
+				<textFieldExpression><![CDATA[$F{con_sites_act_star_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="231" width="117" height="20" uuid="7f86b2a2-2d43-482f-aef6-f2d41f3bea35"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Est Completion          :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="91" width="100" height="20" uuid="70dd4d5f-03d9-4303-bb95-56d95505dbc1"/>
+				<textFieldExpression><![CDATA[$F{con_sites_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="160" width="100" height="20" uuid="eeea31f5-3a94-4ac6-9273-be9f8fa521d6"/>
+				<textFieldExpression><![CDATA[$F{con_sites_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="344" y="34" width="141" height="20" uuid="45223c91-805b-4586-8306-a1c45aff5609"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Information]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="409" width="100" height="20" uuid="e1d0ebef-eee2-4990-bb6c-6b5f1b880c49"/>
+				<textFieldExpression><![CDATA[$F{con_sites_scl_area}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="231" width="100" height="20" uuid="0c457636-684f-46dc-80e3-9a80b75abe3b"/>
+				<textFieldExpression><![CDATA[$F{con_sites_est_comp_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="301" width="100" height="20" uuid="e2c92a61-a508-472b-b0df-2527ee03bd09"/>
+				<textFieldExpression><![CDATA[$F{con_sites_mode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="180" width="100" height="20" uuid="849dfe32-7699-4eff-8582-f4ca8d320326"/>
+				<textFieldExpression><![CDATA[$F{customer_Telephone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="125" width="117" height="20" uuid="4d4fa82a-56cc-449e-80b8-3f881fc62c0a"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Location                     : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="484" width="100" height="20" uuid="ced3842d-a223-4570-925b-33ad49eb2170"/>
+				<textFieldExpression><![CDATA[$F{con_sites_Site_manager}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="113" width="100" height="20" uuid="40c6c80b-852a-4c35-a1f2-44e8b21f5626"/>
+				<textFieldExpression><![CDATA[$F{customer_Name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="321" y="75" width="214" height="1" uuid="6082c3c6-ea40-4d4a-a686-2c6c53814b98"/>
+			</line>
+			<line>
+				<reportElement x="26" y="75" width="229" height="1" uuid="e19f34aa-349c-4fba-a911-791a706174e9"/>
+			</line>
+		</band>
+	</columnHeader>
+</jasperReport>
