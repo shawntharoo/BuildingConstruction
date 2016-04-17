@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fdc9b8e-9b39-4568-99cf-2b851e9e9e0d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     sub_payment.`id` AS sub_payment_id,
+     sub_payment.`meterial` AS sub_payment_meterial,
+     sub_payment.`date` AS sub_payment_date,
+     sub_payment.`amount` AS sub_payment_amount,
+     sub_payment.`type` AS sub_payment_type,
+     sub_payment.`project_id` AS sub_payment_project_id,
+     sub_payment.`sub_id` AS sub_payment_sub_id
+FROM
+     `sub_payment` sub_payment]]>
+	</queryString>
+	<field name="sub_payment_id" class="java.lang.Long"/>
+	<field name="sub_payment_meterial" class="java.lang.String"/>
+	<field name="sub_payment_date" class="java.lang.String"/>
+	<field name="sub_payment_amount" class="java.lang.String"/>
+	<field name="sub_payment_type" class="java.lang.String"/>
+	<field name="sub_payment_project_id" class="java.lang.String"/>
+	<field name="sub_payment_sub_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="22" y="24" width="126" height="35" uuid="08ecb771-9f92-4350-b022-1865397c5946"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="23" width="100" height="20" uuid="75b1fff1-d6c4-4c6a-a8c6-9bdc450de89d"/>
+				<text><![CDATA[sub_payment_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="23" width="100" height="20" uuid="9f0e93c9-fea5-4f79-b06c-25eda0120c00"/>
+				<text><![CDATA[sub_payment_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="23" width="100" height="20" uuid="1647a8f6-2425-49a2-854f-b2b0d5f35b88"/>
+				<text><![CDATA[sub_payment_amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="23" width="100" height="20" uuid="21d944a9-7ea1-43c5-b6f2-3937b205242e"/>
+				<text><![CDATA[sub_payment_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="23" width="100" height="20" uuid="b3f0302e-1e64-44b3-80ff-a704a771e62c"/>
+				<text><![CDATA[sub_payment_sub_id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="20" uuid="bba18eae-c269-4ca0-9413-b09a9e3613d4"/>
+				<textFieldExpression><![CDATA[$F{sub_payment_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="10" width="100" height="20" uuid="f1cd4490-09b6-45a4-86a6-21c822c00389"/>
+				<textFieldExpression><![CDATA[$F{sub_payment_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="10" width="100" height="20" uuid="380ff485-635b-4dba-8619-f11f7cbc0a2e"/>
+				<textFieldExpression><![CDATA[$F{sub_payment_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="10" width="100" height="20" uuid="ac1ebf34-ea54-4fcb-b2e9-a4a4522dc99b"/>
+				<textFieldExpression><![CDATA[$F{sub_payment_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="10" width="100" height="20" uuid="9a0b1e76-b4c6-41d8-bfc0-78e3b974f33e"/>
+				<textFieldExpression><![CDATA[$F{sub_payment_sub_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

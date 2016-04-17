@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59ab6abf-d393-407b-8af5-56a7a526d1e0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     sub_contractor_agreement.`Id_sub` AS sub_contractor_agreement_Id_sub,
+     sub_contractor_agreement.`Est_settelment` AS sub_contractor_agreement_Est_settelment,
+     sub_contractor_agreement.`Contract_date` AS sub_contractor_agreement_Contract_date,
+     sub_contractor_agreement.`descrp` AS sub_contractor_agreement_descrp,
+     sub_contractor_agreement.`Sub_cont_id` AS sub_contractor_agreement_Sub_cont_id,
+     sub_contractor_agreement.`conatract_sighn` AS sub_contractor_agreement_conatract_sighn,
+     sub_contractor_agreement.`addit_want` AS sub_contractor_agreement_addit_want,
+     sub_contractor_agreement.`image` AS sub_contractor_agreement_image,
+     sub_contractor_agreement.`signby` AS sub_contractor_agreement_signby
+FROM
+     `sub_contractor_agreement` sub_contractor_agreement]]>
+	</queryString>
+	<field name="sub_contractor_agreement_Id_sub" class="java.lang.Integer"/>
+	<field name="sub_contractor_agreement_Est_settelment" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_Contract_date" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_descrp" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_Sub_cont_id" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_conatract_sighn" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_addit_want" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_image" class="java.lang.String"/>
+	<field name="sub_contractor_agreement_signby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="18" y="14" width="132" height="36" uuid="13760d3f-e6e5-4280-b2c9-37c7396d8611"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="335" y="0" width="86" height="20" uuid="83af6fa0-ca6b-46f5-b93e-958d313c7f5a"/>
+				<text><![CDATA[Estimate_settl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="0" width="72" height="20" uuid="4cdf53b2-7ce3-4742-b1d5-4128d104f50c"/>
+				<text><![CDATA[Agreement_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="0" width="93" height="20" uuid="72f04224-cc49-4fd9-8c47-f17051ab8128"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="0" width="94" height="20" uuid="b41105e5-bfd5-4615-bcf5-fc67138006b8"/>
+				<text><![CDATA[Additional_want]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="0" width="53" height="20" uuid="60c9e14d-aa71-40be-8a2c-4b4927ad997b"/>
+				<text><![CDATA[Sign_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="0" width="75" height="20" uuid="e6efb39e-e8bf-4a37-99ad-816fcb979e3a"/>
+				<text><![CDATA[Sign by]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="335" y="12" width="86" height="20" uuid="082ad891-315c-4e61-83df-883a42f9c4fd"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_Est_settelment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="12" width="72" height="20" uuid="90d4e893-508a-435b-9a12-c3ff7b2ab3b3"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_Id_sub}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="12" width="93" height="20" uuid="03f08d48-19b5-40b3-aa36-cb3348925a4a"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_descrp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="12" width="94" height="20" uuid="40d9771f-55f6-4c35-a576-0dedbc4606e9"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_addit_want}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="12" width="53" height="20" uuid="d1fa7d32-dc09-43ed-acec-c6aa4902bf58"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_Contract_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="12" width="75" height="20" uuid="5a9c0244-50b4-44a8-8cad-256b2cacf3ae"/>
+				<textFieldExpression><![CDATA[$F{sub_contractor_agreement_signby}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

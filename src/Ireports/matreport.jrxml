@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0569efd0-292f-4b43-ada3-aca54652aee4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     boq_materials.`matid` AS boq_materials_matid,
+     boq_materials.`name` AS boq_materials_name,
+     boq_materials.`unit` AS boq_materials_unit,
+     boq_materials.`rate` AS boq_materials_rate,
+     boq_materials.`markup` AS boq_materials_markup,
+     boq_materials.`description` AS boq_materials_description
+FROM
+     `boq_materials` boq_materials]]>
+	</queryString>
+	<field name="boq_materials_matid" class="java.lang.Integer"/>
+	<field name="boq_materials_name" class="java.lang.String"/>
+	<field name="boq_materials_unit" class="java.lang.String"/>
+	<field name="boq_materials_rate" class="java.lang.Double"/>
+	<field name="boq_materials_markup" class="java.lang.Double"/>
+	<field name="boq_materials_description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="159" y="0" width="238" height="46" uuid="19d57a27-0772-48b5-b913-66cccd3a8542"/>
+				<textElement textAlignment="Center">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="435" y="6" width="119" height="42" uuid="94f59553-2aab-4b5f-a808-66b06f3032d7"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="-62" width="100" height="20" uuid="5cd22aa7-fd07-4ede-a5b1-668700f006f8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1" uuid="1acc3377-1c68-474e-9bb1-c712c6d2ed96"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="159" height="20" uuid="3c1dea6c-8e2a-478a-9f41-add9ff058718"/>
+				<text><![CDATA[ROPA Construction (Pvt) Ltd.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="159" height="20" uuid="49433c59-1910-4f38-880a-7af4c3237287"/>
+				<text><![CDATA[Colombo 8]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4fd8b615-3910-4cab-b6bf-ea4626c9e750"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="0" width="100" height="20" uuid="9d0461ad-c3ce-444c-93ce-e1e2eb47941c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Materials Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="0" width="100" height="20" uuid="76228be4-6c11-468a-984a-41fdacb3bd52"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="14df743e-ccb1-4a9a-bff4-d815ffd463cf"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="555" height="1" uuid="753aa408-b621-4c27-9a98-e03ad72bc119"/>
+			</line>
+			<line>
+				<reportElement x="132" y="1" width="1" height="26" uuid="f96b0445-d8b4-45de-9322-da00177a89c1"/>
+			</line>
+			<line>
+				<reportElement x="276" y="0" width="1" height="26" uuid="d627cf00-fcfd-43b3-a3e0-60440948c94f"/>
+			</line>
+			<line>
+				<reportElement x="435" y="1" width="1" height="26" uuid="ef5726f8-43e2-4588-ae47-971b65b22aa4"/>
+			</line>
+			<line>
+				<reportElement x="132" y="1" width="1" height="26" uuid="a371523e-82fb-4e4c-8d16-5d79c25c35ed"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="ce80db82-8177-46e1-9119-23e238a88d2e"/>
+				<textFieldExpression><![CDATA[$F{boq_materials_matid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="100" height="20" uuid="c8b7196b-eb9a-4f71-aa74-88c461d13483"/>
+				<textFieldExpression><![CDATA[$F{boq_materials_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="100" height="20" uuid="2b9792e0-a6e5-49b2-8c8b-50c37d4d11d4"/>
+				<textFieldExpression><![CDATA[$F{boq_materials_unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="47eefb65-bbba-46f7-8f8b-f9ca24a921c8"/>
+				<textFieldExpression><![CDATA[$F{boq_materials_rate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="435" y="0" width="1" height="26" uuid="1d72b295-8750-4889-aec1-4c0fb3f51cd4"/>
+			</line>
+			<line>
+				<reportElement x="276" y="-1" width="1" height="27" uuid="84e4d878-fca6-4877-8ba5-81372f2f4f7c"/>
+			</line>
+			<line>
+				<reportElement x="132" y="0" width="1" height="26" uuid="3adeedde-e608-4b7e-ae07-ee0f5dabc198"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="00bc8dc9-524c-4ee2-a775-3b1357aa0dde"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="532" y="34" width="23" height="20" uuid="daa8ccc4-5c3d-4b45-8c2d-b1d4268454cc"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

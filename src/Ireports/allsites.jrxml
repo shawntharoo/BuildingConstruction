@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a900ee50-0146-4759-b49c-60315d074194">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     con_sites.`id` AS con_sites_id,
+     con_sites.`name` AS con_sites_name,
+     con_sites.`location` AS con_sites_location,
+     con_sites.`Cust_id` AS con_sites_Cust_id,
+     con_sites.`address` AS con_sites_address,
+     con_sites.`status` AS con_sites_status,
+     con_sites.`est_comp_date` AS con_sites_est_comp_date,
+     con_sites.`type` AS con_sites_type,
+     con_sites.`mode` AS con_sites_mode,
+     con_sites.`no_levels` AS con_sites_no_levels,
+     con_sites.`act_star_date` AS con_sites_act_star_date,
+     con_sites.`scl_area` AS con_sites_scl_area,
+     con_sites.`remarks` AS con_sites_remarks,
+     con_sites.`map_loc` AS con_sites_map_loc,
+     con_sites.`pro_img` AS con_sites_pro_img,
+     con_sites.`3D_img` AS con_sites_3D_img,
+     con_sites.`compl_stat` AS con_sites_compl_stat,
+     con_sites.`session` AS con_sites_session,
+     con_sites.`Site_manager` AS con_sites_Site_manager,
+     con_sites.`com_lvls` AS con_sites_com_lvls
+FROM
+     `con_sites` con_sites]]>
+	</queryString>
+	<field name="con_sites_id" class="java.lang.Long"/>
+	<field name="con_sites_name" class="java.lang.String"/>
+	<field name="con_sites_location" class="java.lang.String"/>
+	<field name="con_sites_Cust_id" class="java.lang.Long"/>
+	<field name="con_sites_address" class="java.lang.String"/>
+	<field name="con_sites_status" class="java.lang.String"/>
+	<field name="con_sites_est_comp_date" class="java.sql.Date"/>
+	<field name="con_sites_type" class="java.lang.String"/>
+	<field name="con_sites_mode" class="java.lang.String"/>
+	<field name="con_sites_no_levels" class="java.lang.Long"/>
+	<field name="con_sites_act_star_date" class="java.sql.Date"/>
+	<field name="con_sites_scl_area" class="java.lang.String"/>
+	<field name="con_sites_remarks" class="java.lang.String"/>
+	<field name="con_sites_map_loc" class="java.lang.String"/>
+	<field name="con_sites_pro_img" class="java.lang.Object"/>
+	<field name="con_sites_3D_img" class="java.lang.Object"/>
+	<field name="con_sites_compl_stat" class="java.lang.String"/>
+	<field name="con_sites_session" class="java.lang.String"/>
+	<field name="con_sites_Site_manager" class="java.lang.Long"/>
+	<field name="con_sites_com_lvls" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="15" y="9" width="148" height="70" uuid="6f5b5697-ecaf-4560-ad5d-49d5597c2745"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="97a21d5b-93dd-43a9-a698-1f8683df74d9"/>
+				<text><![CDATA[Site Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="87" height="20" uuid="8217a499-ce54-403b-89fd-ea902eef9084"/>
+				<text><![CDATA[Site Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="100" height="20" uuid="1c778a59-0b6f-4faa-b882-7e3c968bbce2"/>
+				<text><![CDATA[Actual Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="0" width="100" height="20" uuid="54da6cfc-2496-4a66-97b6-4f8b2361ed0e"/>
+				<text><![CDATA[Est. Completion Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="67" height="20" uuid="0dda08d2-5c4c-4887-a9fe-d9b623e11f2b"/>
+				<text><![CDATA[Customer Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="0" width="100" height="20" uuid="2af3d9b7-2352-4930-8488-bec0adc6aefe"/>
+				<text><![CDATA[Construction Type]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="13" width="100" height="20" uuid="a2beab52-8b97-4b45-b0a8-441f737ba86b"/>
+				<textFieldExpression><![CDATA[$F{con_sites_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="13" width="87" height="20" uuid="9fbad650-75e3-4800-83b3-6f20f5e8a47b"/>
+				<textFieldExpression><![CDATA[$F{con_sites_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="13" width="100" height="20" uuid="12fa947a-11ab-41f0-8846-efb3380d6a8a"/>
+				<textFieldExpression><![CDATA[$F{con_sites_act_star_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="13" width="100" height="20" uuid="a31e3e62-2932-4575-b1ce-f17f9ce76bd7"/>
+				<textFieldExpression><![CDATA[$F{con_sites_est_comp_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="13" width="67" height="20" uuid="6c7d9c35-731f-4d4f-93a3-77108c2e63b2"/>
+				<textFieldExpression><![CDATA[$F{con_sites_Cust_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="13" width="100" height="20" uuid="670e54dc-0879-4ac1-aba2-4301a4c38f81"/>
+				<textFieldExpression><![CDATA[$F{con_sites_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

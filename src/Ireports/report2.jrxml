@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3bb9b6a-706a-4619-9c90-db8f0b530c1d">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     con_sites.`id` AS con_sites_id,
+     con_sites.`name` AS con_sites_name,
+     con_sites.`location` AS con_sites_location,
+     con_sites.`Cust_id` AS con_sites_Cust_id,
+     con_sites.`address` AS con_sites_address,
+     con_sites.`status` AS con_sites_status,
+     con_sites.`est_comp_date` AS con_sites_est_comp_date,
+     con_sites.`type` AS con_sites_type,
+     con_sites.`mode` AS con_sites_mode,
+     con_sites.`no_levels` AS con_sites_no_levels,
+     con_sites.`act_star_date` AS con_sites_act_star_date,
+     con_sites.`scl_area` AS con_sites_scl_area,
+     con_sites.`session` AS con_sites_session,
+     con_sites.`Site_manager` AS con_sites_Site_manager,
+     con_sites.`com_lvls` AS con_sites_com_lvls,
+     assinged_eng.`id` AS assinged_eng_id,
+     assinged_eng.`name` AS assinged_eng_name,
+     assinged_eng.`lname` AS assinged_eng_lname,
+     assinged_eng.`EID` AS assinged_eng_EID,
+     assinged_eng.`contact` AS assinged_eng_contact,
+     assinged_eng.`wrking_hrs` AS assinged_eng_wrking_hrs,
+     assinged_sup.`id` AS assinged_sup_id,
+     assinged_sup.`name` AS assinged_sup_name,
+     assinged_sup.`lname` AS assinged_sup_lname,
+     assinged_sup.`EID` AS assinged_sup_EID,
+     assinged_sup.`contact` AS assinged_sup_contact
+FROM
+     `assinged_eng` assinged_eng INNER JOIN `con_sites` con_sites ON assinged_eng.`id` = con_sites.`id`
+     INNER JOIN `assinged_sup` assinged_sup ON con_sites.`id` = assinged_sup.`id`]]>
+	</queryString>
+	<field name="con_sites_id" class="java.lang.Long"/>
+	<field name="con_sites_name" class="java.lang.String"/>
+	<field name="con_sites_location" class="java.lang.String"/>
+	<field name="con_sites_Cust_id" class="java.lang.Long"/>
+	<field name="con_sites_address" class="java.lang.String"/>
+	<field name="con_sites_status" class="java.lang.String"/>
+	<field name="con_sites_est_comp_date" class="java.sql.Date"/>
+	<field name="con_sites_type" class="java.lang.String"/>
+	<field name="con_sites_mode" class="java.lang.String"/>
+	<field name="con_sites_no_levels" class="java.lang.Long"/>
+	<field name="con_sites_act_star_date" class="java.sql.Date"/>
+	<field name="con_sites_scl_area" class="java.lang.String"/>
+	<field name="con_sites_session" class="java.lang.String"/>
+	<field name="con_sites_Site_manager" class="java.lang.Long"/>
+	<field name="con_sites_com_lvls" class="java.lang.Long"/>
+	<field name="assinged_eng_id" class="java.lang.Long"/>
+	<field name="assinged_eng_name" class="java.lang.String"/>
+	<field name="assinged_eng_lname" class="java.lang.String"/>
+	<field name="assinged_eng_EID" class="java.lang.Long"/>
+	<field name="assinged_eng_contact" class="java.lang.String"/>
+	<field name="assinged_eng_wrking_hrs" class="java.lang.Long"/>
+	<field name="assinged_sup_id" class="java.lang.String"/>
+	<field name="assinged_sup_name" class="java.lang.String"/>
+	<field name="assinged_sup_lname" class="java.lang.String"/>
+	<field name="assinged_sup_EID" class="java.lang.Long"/>
+	<field name="assinged_sup_contact" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="c49dbebb-794e-47c5-bcea-528b7534d19e"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="961ca777-bea0-437a-a3c0-b3dcdc89021d"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="009395ad-444e-48e2-86c2-2c0898b823ef"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry Title]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="356e2820-3271-4e38-9d16-1bd3e47f2b85"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="c2212492-e6bf-4cc3-961f-40b5d3246219"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="be1fcb05-c89a-49ac-85a6-c5c117d97bfc"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="21" height="18" forecolor="#000000" uuid="7db9890b-244f-4435-8dc3-2aa97360561f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="21" y="7" width="21" height="18" forecolor="#000000" uuid="52db5c9a-f07f-49b1-848b-013d18ac3787"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="42" y="7" width="21" height="18" forecolor="#000000" uuid="60ebac09-b4b5-414c-aa7c-b4c2c4d60c30"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="63" y="7" width="21" height="18" forecolor="#000000" uuid="149f79d5-9235-4f2f-9151-cf63bbf5408f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_Cust_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="84" y="7" width="21" height="18" forecolor="#000000" uuid="9ffa6d35-f099-4044-9e2d-9cc8dc69a093"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="105" y="7" width="21" height="18" forecolor="#000000" uuid="3ff5c38a-2583-457d-bb26-44fd4b85a70f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="126" y="7" width="21" height="18" forecolor="#000000" uuid="ddacb5c4-72c3-438d-89ec-1a01855963da"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_est_comp_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="147" y="7" width="21" height="18" forecolor="#000000" uuid="7a857ed4-1ad6-41be-bab2-542a1a2774d4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="168" y="7" width="21" height="18" forecolor="#000000" uuid="254fae11-4e17-4491-94a9-a8ffadbb7b94"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_mode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="189" y="7" width="21" height="18" forecolor="#000000" uuid="f57d839e-8839-413f-994e-350aec7f8f66"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_no_levels]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="210" y="7" width="21" height="18" forecolor="#000000" uuid="c9a87f97-95fe-4d68-a1d0-d4ec8c0f5c6d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_act_star_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="231" y="7" width="21" height="18" forecolor="#000000" uuid="a0806ed2-74e2-439e-8297-c5701f9cc861"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_scl_area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="7" width="21" height="18" forecolor="#000000" uuid="366f5e37-a685-4799-bd0b-d8aa80d283ed"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_session]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="273" y="7" width="21" height="18" forecolor="#000000" uuid="f35613a5-69b4-4fcc-a6d8-300df2f6cae4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_Site_manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="294" y="7" width="21" height="18" forecolor="#000000" uuid="58640d7a-a98b-4c28-aa35-2efd9b85c2ef"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con_sites_com_lvls]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="315" y="7" width="21" height="18" forecolor="#000000" uuid="9edcf16c-8854-4236-9c1c-67e834547a2d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="336" y="7" width="21" height="18" forecolor="#000000" uuid="88927bea-3a29-4bd3-84e3-7e95390a67c1"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="357" y="7" width="21" height="18" forecolor="#000000" uuid="d16e3636-64c5-4799-85f5-95b59bb05569"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_lname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="378" y="7" width="21" height="18" forecolor="#000000" uuid="c0d56397-9c89-4803-86b6-c19e78834f73"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_EID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="399" y="7" width="21" height="18" forecolor="#000000" uuid="fe8d8863-b509-4c00-b8d0-e0266e85bf58"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="420" y="7" width="21" height="18" forecolor="#000000" uuid="3c658c2d-62c6-41b1-b478-04696d32ff01"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_eng_wrking_hrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="441" y="7" width="21" height="18" forecolor="#000000" uuid="12295b41-b01a-4233-92ca-1ee4df6d1614"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_sup_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="462" y="7" width="21" height="18" forecolor="#000000" uuid="41fed174-e206-449d-87e4-93786a0b461a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_sup_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="483" y="7" width="21" height="18" forecolor="#000000" uuid="e07676a2-5f2d-438b-ac76-47d0fbea477a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_sup_lname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="7" width="21" height="18" forecolor="#000000" uuid="0e4133bf-2f63-4550-9343-e1f073abbc70"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_sup_EID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="525" y="7" width="21" height="18" forecolor="#000000" uuid="e7c71752-45f0-4abb-b753-83177a661109"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[assinged_sup_contact]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="02929618-2ab8-4d21-8ed6-987e69ddff5a"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="21" height="18" uuid="441dea53-5b78-4ea7-85fb-7d35cbec67c6"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="21" y="0" width="21" height="18" uuid="d7efbe48-bd88-48b5-bcf9-30b21d24978c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="42" y="0" width="21" height="18" uuid="0a25de25-309d-4c50-97ff-72c3b5de7da7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_location}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="63" y="0" width="21" height="18" uuid="f579a2f4-0734-42b9-819e-95a2f4758c4f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_Cust_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="84" y="0" width="21" height="18" uuid="03896441-378c-4030-8670-f51e1cf9e9fc"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="105" y="0" width="21" height="18" uuid="ee31ae0f-9824-480d-b599-1a51c13f4d51"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="126" y="0" width="21" height="18" uuid="698b745e-2104-45b9-957d-4bfbd9c14636"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_est_comp_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="147" y="0" width="21" height="18" uuid="455b592b-7ded-49fb-bbda-8e3ef72bbbfd"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="168" y="0" width="21" height="18" uuid="6d117bed-30c8-4263-8a51-c9580e4fc39a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_mode}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="189" y="0" width="21" height="18" uuid="64dd0073-efaa-49dd-a99d-a8e7475cb7a3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_no_levels}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="210" y="0" width="21" height="18" uuid="a5eaa54f-215c-4f57-aa66-148106b7c8a0"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_act_star_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="231" y="0" width="21" height="18" uuid="61384f43-36a6-4acd-aff9-d1ef64631d5c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_scl_area}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="252" y="0" width="21" height="18" uuid="d4a5c8aa-edb0-4f29-913a-b8a190a3b9a7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_session}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="273" y="0" width="21" height="18" uuid="f334dba2-59a1-4c16-bf6b-ba1a0ee96ec1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_Site_manager}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="294" y="0" width="21" height="18" uuid="ea10a6f7-5d57-4643-81b9-6365ac2acd3d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_sites_com_lvls}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="315" y="0" width="21" height="18" uuid="02c9c108-b2d7-477d-aac3-bd00fb3712ae"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="336" y="0" width="21" height="18" uuid="6e7d02d1-8352-4989-bcac-a188fec49c99"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="357" y="0" width="21" height="18" uuid="ebad79e4-1d8e-46fc-b5d0-2d28214dea6a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_lname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="378" y="0" width="21" height="18" uuid="56d30b55-de7d-40be-8173-d73152248b87"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_EID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="399" y="0" width="21" height="18" uuid="7c463967-d5df-4a9d-a65a-856b88054dbf"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_contact}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="420" y="0" width="21" height="18" uuid="a85fdfa9-bd0a-4574-a89c-4b81403ebdf9"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_eng_wrking_hrs}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="441" y="0" width="21" height="18" uuid="5b5a291e-07c0-4d53-b60e-95bd36d4330f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_sup_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="462" y="0" width="21" height="18" uuid="18dbb1d8-345b-42f8-b0eb-f08394b35c15"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_sup_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="483" y="0" width="21" height="18" uuid="1e7eef45-8dc8-4004-8eb4-1e900fea93ad"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_sup_lname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="504" y="0" width="21" height="18" uuid="ae655413-3404-4d60-983d-e94382da65a8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_sup_EID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="525" y="0" width="21" height="18" uuid="47a7190d-3d2d-46d5-98df-a04821e8fd8b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{assinged_sup_contact}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="472bb5a0-ba3f-4e29-ac57-61239a873f7e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="2bfc64a1-6fc8-42b0-ad87-9a78e132a4b1"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="30691440-2535-4eef-99af-0df47a255c66"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="26e7738b-1b35-4781-8637-6f928d8f344c"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="e908889e-9c66-4833-b4eb-bd77ef33b721"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

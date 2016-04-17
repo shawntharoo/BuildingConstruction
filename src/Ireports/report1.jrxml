@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0325dcde-9f7d-4430-852d-375a4baeb78b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     cus_payment.`idCus_payment` AS cus_payment_idCus_payment,
+     cus_payment.`Cust_no` AS cus_payment_Cust_no,
+     cus_payment.`Project_id` AS cus_payment_Project_id,
+     cus_payment.`Project_status` AS cus_payment_Project_status,
+     cus_payment.`Project_level` AS cus_payment_Project_level,
+     cus_payment.`Amount` AS cus_payment_Amount,
+     cus_payment.`Date` AS cus_payment_Date
+FROM
+     `cus_payment` cus_payment]]>
+	</queryString>
+	<field name="cus_payment_idCus_payment" class="java.lang.Integer"/>
+	<field name="cus_payment_Cust_no" class="java.lang.String"/>
+	<field name="cus_payment_Project_id" class="java.lang.String"/>
+	<field name="cus_payment_Project_status" class="java.lang.String"/>
+	<field name="cus_payment_Project_level" class="java.lang.String"/>
+	<field name="cus_payment_Amount" class="java.lang.String"/>
+	<field name="cus_payment_Date" class="java.lang.String"/>
+	<variable name="cus_payment_Amount_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{cus_payment_Amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="8" y="15" width="141" height="44" uuid="82185715-f7fe-4c45-9691-311c18a76a4f"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="413" y="15" width="100" height="20" uuid="96ffb133-92b4-4bdf-9b44-8f6c0f0f1ced"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="0" width="190" height="35" uuid="41edcf70-bfcd-4be8-b74a-8cf4de250e13"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Payment Report]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="19" width="547" height="3" uuid="1faabe6e-de25-4e4d-bedb-9286d3ac9584"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="2" width="100" height="20" uuid="1502e164-6072-4dd5-a704-31803faae291"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="0" width="100" height="20" uuid="5083931e-e9a2-46ab-99ff-109e1bd6c6e7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="100" height="20" uuid="da1f2e2c-7374-4995-9be8-2028597d41c1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="7" width="72" height="20" uuid="787987fe-dfc6-415e-932e-3d56b8ed142a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Level]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="78" height="20" uuid="8f6459a4-b908-4196-894b-0b068f4c9f8b"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="12" width="100" height="20" uuid="32582bb0-0b3e-4f96-bd6f-ef1a8e9f1ccd"/>
+				<textFieldExpression><![CDATA[$F{cus_payment_Cust_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="12" width="100" height="20" uuid="ba361dec-636b-4f15-bcfe-321539cef8d3"/>
+				<textFieldExpression><![CDATA[$F{cus_payment_Project_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="12" width="100" height="20" uuid="a3633e09-583a-4c9b-9696-972a1b0a9616"/>
+				<textFieldExpression><![CDATA[$F{cus_payment_Project_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="12" width="72" height="20" uuid="16b59cb3-a936-4a3b-ae37-9275db599587"/>
+				<textFieldExpression><![CDATA[$F{cus_payment_Project_level}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="12" width="100" height="20" uuid="3c18d716-0dc8-44b8-8e28-14f1d9d16ebc"/>
+				<textFieldExpression><![CDATA[$F{cus_payment_Amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

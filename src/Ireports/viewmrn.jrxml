@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="view mrn" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32cea54a-5ad3-4d54-82f5-978c69a896fe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="35"/>
+	<property name="ireport.y" value="20"/>
+	<queryString language="SQL">
+		<![CDATA[select* from material_request_note]]>
+	</queryString>
+	<field name="Mat_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Mat_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="require_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="curr_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MRN_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Mat_no">
+		<groupExpression><![CDATA[$F{Mat_no}]]></groupExpression>
+	</group>
+	<group name="Mat_name">
+		<groupExpression><![CDATA[$F{Mat_name}]]></groupExpression>
+	</group>
+	<group name="require_date">
+		<groupExpression><![CDATA[$F{require_date}]]></groupExpression>
+	</group>
+	<group name="MRN_NO">
+		<groupExpression><![CDATA[$F{MRN_NO}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="336" y="33" width="200" height="36" forecolor="#009999" uuid="6ef86410-a29e-4ae4-8c6b-b46df509f858"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[View MRN]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="23" y="13" width="100" height="20" uuid="25a155c5-7b63-4628-b093-652d8fc6f470"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="23" y="24" width="100" height="20" uuid="482b2cd2-93f6-4afb-9a2d-c732cc21fa94"/>
+				<text><![CDATA[Material no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="24" width="100" height="20" uuid="294463aa-8f33-4fc7-bbfb-4a8b9c410cf1"/>
+				<text><![CDATA[ Material_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="24" width="100" height="20" uuid="48be632c-ae43-49ac-bbb0-0610f1623e99"/>
+				<text><![CDATA[ require_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="24" width="100" height="20" uuid="c7476007-ae63-4272-a3dc-4cc213e5be7a"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="577" y="24" width="100" height="20" uuid="eda82a1b-c7c4-4793-afe1-a9ada54065a0"/>
+				<text><![CDATA[current_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="691" y="24" width="100" height="20" uuid="cb19e76f-c2a2-48ea-ac75-42013b34c8ef"/>
+				<text><![CDATA[MRN_NO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="10" width="780" height="1" uuid="a847b42f-5187-4f44-877e-93419ce80598"/>
+			</line>
+			<line>
+				<reportElement x="11" y="55" width="780" height="1" uuid="e49f242b-ce30-4a7e-a53e-02da7e86aecd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="15" width="100" height="20" uuid="567291cd-a903-4d09-b552-9c654158ea4b"/>
+				<textFieldExpression><![CDATA[$F{Mat_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="15" width="100" height="20" uuid="9d25be96-ac87-46fd-85f7-054a5153b46d"/>
+				<textFieldExpression><![CDATA[$F{Mat_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="15" width="100" height="20" uuid="28eccc38-10b0-4b55-847c-6d4b4ce4ab94"/>
+				<textFieldExpression><![CDATA[$F{require_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="15" width="100" height="20" uuid="31c01e64-eb0a-48ba-863d-dc9102961021"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="577" y="15" width="100" height="20" uuid="16e38dbf-e0a6-4137-af4e-aa8343e4f9aa"/>
+				<textFieldExpression><![CDATA[$F{curr_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="691" y="15" width="100" height="20" uuid="9a77e311-4e08-4e6e-b1c9-bbacb1dcdaab"/>
+				<textFieldExpression><![CDATA[$F{MRN_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9dbd5181-346d-42f2-b837-9e216f8c3b27">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     project_level_payment.`idproject_level_payment` AS project_level_payment_idproject_level_payment,
+     project_level_payment.`level` AS project_level_payment_level,
+     project_level_payment.`cost` AS project_level_payment_cost,
+     project_level_payment.`projectid` AS project_level_payment_projectid,
+     project_level_payment.`name` AS project_level_payment_name,
+     project_level_payment.`date` AS project_level_payment_date
+FROM
+     `project_level_payment` project_level_payment]]>
+	</queryString>
+	<field name="project_level_payment_idproject_level_payment" class="java.lang.Long"/>
+	<field name="project_level_payment_level" class="java.lang.String"/>
+	<field name="project_level_payment_cost" class="java.lang.Double"/>
+	<field name="project_level_payment_projectid" class="java.lang.String"/>
+	<field name="project_level_payment_name" class="java.lang.String"/>
+	<field name="project_level_payment_date" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="19" y="23" width="148" height="37" uuid="432111ac-1f85-4610-bb80-988e50151bd5"/>
+				<imageExpression><![CDATA["C:\\Users\\Asbar Ali\\Documents\\Building_Constructions\\picture\\csm_logo_ropa_8d22f692a9.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="425" y="23" width="100" height="20" uuid="83e13376-4531-41f1-bca5-a281bc648f69"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="0" width="170" height="20" uuid="9bd9185e-a68a-4e36-b99e-66c112e95052"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Cost Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="72" height="20" uuid="811efc0e-f53b-409d-9109-22bbf975c539"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="82" height="20" uuid="fc1def53-e091-426e-b6a8-c5b8461f85c6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Level]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="0" width="86" height="20" uuid="16ae3ecd-6140-49aa-b620-fd0ca167500f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="0" width="88" height="20" uuid="ecd77539-93b2-478f-b66c-c3215b69c715"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="0" width="69" height="20" uuid="013f068c-315b-404f-803e-719e0dbad87f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" uuid="bb9e5440-bbd0-4547-9634-d2dc52db09c8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="72" height="20" uuid="2844d881-4d66-4c28-b2da-a8715933faa2"/>
+				<textFieldExpression><![CDATA[$F{project_level_payment_idproject_level_payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="0" width="82" height="20" uuid="1ed843fc-a634-4540-a6d5-7c2088e26c89"/>
+				<textFieldExpression><![CDATA[$F{project_level_payment_level}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="86" height="20" uuid="d86c53ec-315c-45f8-9fc4-9c8d62ef2425"/>
+				<textFieldExpression><![CDATA[$F{project_level_payment_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="72" height="20" uuid="3dbdfcf8-8434-4880-84e8-6b53d2a21586"/>
+				<textFieldExpression><![CDATA[$F{project_level_payment_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="69" height="20" uuid="ec64f100-baa6-467e-a662-6ee17b42a607"/>
+				<textFieldExpression><![CDATA[$F{project_level_payment_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
